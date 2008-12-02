@@ -1,5 +1,5 @@
-Manifest
-README.rdoc
-Rakefile
 lib/teds_iphone_rdoc_template.rb
+Manifest
+Rakefile
+README.rdoc
 teds_iphone_rdoc_template.gemspec
