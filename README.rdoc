@@ -1,0 +1,4 @@
+= How to run for Rails
+
+  cd <your rails directory>
+  rake rerdoc template=<your path to teds_iphone_rdoc_template>/teds_iphone_rdoc_template.rb
