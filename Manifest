@@ -1,5 +1,5 @@
-lib/teds_iphone_rdoc_template.rb
+lib/iphone_rdoc_template.rb
+LICENSE
 Manifest
 Rakefile
 README.rdoc
-teds_iphone_rdoc_template.gemspec
