@@ -19,12 +19,6 @@ XHTML_PREAMBLE = %{<?xml version="1.0" encoding="%charset%"?>
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 }
 
-XHTML_FRAMESET_PREAMBLE = %{
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">    
-}
-
 HEADER = XHTML_PREAMBLE + <<ENDHEADER
 <html>
   <head>
@@ -357,18 +351,36 @@ HTML
 CLASS_INDEX = FILE_INDEX
 METHOD_INDEX = FILE_INDEX
 
-INDEX = XHTML_FRAMESET_PREAMBLE + <<HTML
+INDEX = XHTML_PREAMBLE + <<HTML
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <title>%title%</title>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+    <style type="text/css">
+body {
+  font-family: Helvetica;
+  font-size: 32pt;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  float: none;
+}
+    </style>
   </head>
   <body>
-    <div>
-      <a href="fr_file_index.html">Files</a>
-      <a href="fr_class_index.html">Classes</a>
-      <a href="fr_method_index.html">Methods</a>
-    </div>
+    <ul id="index">
+      <li>
+        <a href="fr_file_index.html">Files</a>
+      </li>
+      <li>
+        <a href="fr_class_index.html">Classes</a>
+      </li>
+      <li>
+        <a href="fr_method_index.html">Methods</a>
+      </li>
+    </ul>
   </body>
 </html>
 HTML
