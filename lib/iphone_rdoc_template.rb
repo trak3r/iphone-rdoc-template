@@ -94,7 +94,6 @@ CLASS_PAGE = <<HTML
     %full_name%
   </div>
   <div>
-    In:
 START:infiles
       HREF:full_path_url:full_path:
 END:infiles
@@ -356,11 +355,13 @@ li {
     <div>
       %list_title%
     </div>
+    <ul>
 START:entries
-    <div>
-      <a href="%href%">%name%</a>
-    </div>
+      <li>
+        <a href="%href%">%name%</a>
+      </li>
 END:entries
+    </ul>
   </body>
 </html>
 HTML
@@ -387,7 +388,7 @@ li {
     </style>
   </head>
   <body>
-    <ul id="index">
+    <ul>
       <li>
         <a href="fr_file_index.html">Files</a>
       </li>
