@@ -7,3 +7,7 @@ It's an RDoc template tailored to look better in the iPhone web browser (no fram
 == How do I use it?
 
 Download it then write yourself a Rake task like the one in this project (changing the appropriate paths, of course).
+
+== Caveats
+
+For the sake of simplicity, I removed the source code links and embeddings.
