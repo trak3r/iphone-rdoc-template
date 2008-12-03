@@ -1,10 +1,7 @@
 # Ted's iPhone RDoc template
 #
-# Based on the Hongli Lai template:
+# Based on a gutted version of the Hongli Lai template:
 # http://izumi.plan99.net/blog/
-#
-# Based on the Jamis template:
-# http://weblog.jamisbuck.org/2005/4/8/rdoc-template
 module RDoc
 module Page
 
@@ -269,52 +266,54 @@ END:attributes
 ENDIF:attributes
 
 IF:method_list
+    <dt>
+      Methods
+    </dt>
+    <dd>
+      <dl class="method_list">
 START:method_list
 IF:methods
-  <div>
-    %type% 
-    %category% 
-    methods
-  </div>
+        <dt>
+          %type% 
+          %category% 
+          methods
+        </dt>
+        <dd>
 START:methods
-<div>
-  <div>
+  
 IF:callseq
-    <a name="%aref%">%callseq%</a>
+        <a name="%aref%">%callseq%</a>
 ENDIF:callseq
 IFNOT:callseq
-    <a name="%aref%">%name%</a>
-    %params%
+        <a name="%aref%">%name%</a>
+        %params%
 ENDIF:callseq
-IF:codeurl
-    [<a href="%codeurl%" target="SOURCE_CODE" onclick="javascript:openCode('%codeurl%'); return false;">source</a>]
-ENDIF:codeurl
-  </div>
+
 IF:m_desc
-  <div>
-    %m_desc%
-  </div>
+        <dt>
+          Desciption
+        </dt>
+        <dd>
+          %m_desc%
+        </dd>
 ENDIF:m_desc
+
 IF:aka
-  <div>
-    This method is also aliased as
+        <dt>
+          Alias
+        </dt>
+        <dd>
 START:aka
-    <a href="%aref%">%name%</a>
+          <a href="%aref%">%name%</a>
 END:aka
-  </div>
+        </dd>
 ENDIF:aka
-IF:sourcecode
-  [<a href="javascript:toggleSource('%aref%_source')" id="l_%aref%_source">show source</a>]
-  <div id="%aref%_source" class="dyn-source">
-<pre>
-%sourcecode%
-</pre>
-  </div>
-</div>
-ENDIF:sourcecode
-</div>
+
 END:methods
+        </dd>
 ENDIF:methods
+      </dl class="method_list">
+    </dd>
 END:method_list
 ENDIF:method_list
 
@@ -378,16 +377,6 @@ FILE_INDEX = XHTML_PREAMBLE + <<HTML
       %list_title%
     </title>
     <style type="text/css">
-body {
-  font-family: Helvetica;
-  font-size: 32pt;
-}
-ul {
-  list-style-type: none;
-}
-li {
-  float: none;
-}
     </style>
   </head>
   <body>
@@ -416,16 +405,6 @@ INDEX = XHTML_PREAMBLE + <<HTML
       %title%
     </title>
     <style type="text/css">
-body {
-  font-family: Helvetica;
-  font-size: 32pt;
-}
-ul {
-  list-style-type: none;
-}
-li {
-  float: none;
-}
     </style>
   </head>
   <body>
