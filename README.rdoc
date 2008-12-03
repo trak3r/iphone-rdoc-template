@@ -1,10 +1,7 @@
 = What is it?
 
-It's an RDoc template tailored to look better in the iPhone web browser.
+It's an RDoc template tailored to look better in the iPhone web browser (no frames, a lot less styling, etc.).
 
-== How to generate for Rails
+= How do I use it?
 
-  cd <your rails directory>
-  rake rerdoc template=<path to iphone_rdoc_template>/iphone_rdoc_template
-
-(Note: It's important to leave off the ".rb" extension as the Rails Rake task will append it to the path.)
+Download it then write yourself a Rake task like the one in this project (changing the appropriate paths, of course).
