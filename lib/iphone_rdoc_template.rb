@@ -10,7 +10,7 @@ FONTS = ""
 STYLE = <<CSS
 body {
 	font-family: Helvetica;
-	xfont-size: 28pt;
+	font-size: 28pt;
 }
 ul {
 	list-style: none;
