@@ -95,20 +95,28 @@ FILE_PAGE = <<HTML
 HTML
 
 CLASS_PAGE = <<HTML
-  <div>
-    %classmod%
-  </div>
-  <div>
+%classmod%
+  <h1>
     %full_name%
-  </div>
-  <div>
+  </h1>
+  <dl>
+    <dt>
+      Files
+    </dt>
+    <dd>
+      <ul>
 START:infiles
-      HREF:full_path_url:full_path:
+        <li>
+          HREF:full_path_url:full_path:
+        </li>
 END:infiles
-  </div>
-  <div>
+      </ul>
+    </dd>
 IF:parent
-    Parent:
+    <dt>
+      Parent
+    </dt>
+    <dd>
 IF:par_url
       <a href="%par_url%">
 ENDIF:par_url
@@ -117,7 +125,8 @@ IF:par_url
       </a>
 ENDIF:par_url
 ENDIF:parent
-  </div>
+    </dd>
+  </dl>
 HTML
 
 METHOD_LIST = <<HTML
