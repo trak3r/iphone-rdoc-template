@@ -75,15 +75,23 @@ HEADER = XHTML_PREAMBLE + <<ENDHEADER
 ENDHEADER
 
 FILE_PAGE = <<HTML
-  <div>
-    File: %short_name%
-  </div>
-  <div>
-    Path: %full_path%
-  </div>
-  <div>
-    Modified: %dtm_modified%
-  </div>
+  <h1>
+    %short_name%
+  </h1>
+  <dl>
+    <dt>
+      Path
+    </dt>
+    <dd>
+      %full_path%
+    </dd>
+    <dt>
+      Modified
+    </dt>
+    <dd>
+      %dtm_modified%
+    </dd>
+  </dl>
 HTML
 
 CLASS_PAGE = <<HTML
@@ -127,14 +135,18 @@ IF:description
 ENDIF:description
 
 IF:requires
-  <div>
-    Required Files
-    <ul>
+  <dl>
+    <dt>
+      Required Files
+    </dt>
+    <dd>
+      <ul>
 START:requires
-      <li>HREF:aref:name:</li>
+        <li>HREF:aref:name:</li>
 END:requires
-    </ul>
-  </div>
+      </ul>
+    </dd>
+  </dl>
 ENDIF:requires
 
 IF:toc
