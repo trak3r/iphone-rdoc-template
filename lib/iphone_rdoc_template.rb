@@ -130,21 +130,26 @@ ENDIF:parent
 HTML
 
 METHOD_LIST = <<HTML
-<div>
+  <dl>
 IF:diagram
-  <div>
-    %diagram%
-  </div>
+    <dt>
+      Diagram
+    </dt>
+    <dd>
+      %diagram%
+    </dd>
 ENDIF:diagram
 
 IF:description
-  <div>
-    %description%
-  </div>
+    <dt>
+      Description
+    </dt>
+    <dd>
+      %description%
+    </dd>
 ENDIF:description
 
 IF:requires
-  <dl>
     <dt>
       Required Files
     </dt>
@@ -155,102 +160,112 @@ START:requires
 END:requires
       </ul>
     </dd>
-  </dl>
 ENDIF:requires
 
 IF:toc
-  <div>
-    Contents
-    <ul>
+    <dt>
+      Contents
+    </dt>
+    <dd>
+      <ul>
 START:toc
-      <li><a href="#%href%">%secname%</a></li>
+        <li>
+          <a href="#%href%">%secname%</a>
+        </li>
 END:toc
-    </ul>
-  </div>
+      </ul>
+    </dd>
 ENDIF:toc
 
 IF:methods
-  <div>
-    Methods
-    <ul>
+    <dt>
+      Methods
+    </dt>
+    <dd>
+      <ul>
 START:methods
-      <li>HREF:aref:name:</li>
+        <li>HREF:aref:name:</li>
 END:methods
-    </ul>
-  </div>
+      </ul>
+    </dd>
 ENDIF:methods
 
 IF:includes
-  <div>
-    Included Modules
-    <ul>
+    <dt>
+      Included Modules
+    </dt>
+    <dd>
+      <ul>
 START:includes
-      <li>HREF:aref:name:</li>
+        <li>HREF:aref:name:</li>
 END:includes
-    </ul>
-  </div>
+      </ul>
+    </dd>
 ENDIF:includes
 
 START:sections
 IF:sectitle
-  <div>
-    <a name="%secsequence%">%sectitle%</a>
-  </div>
+    <dt>
+      <a name="%secsequence%">%sectitle%</a>
+    </dt>
 IF:seccomment
-  <div>
-    %seccomment%
-  </div>
+    <dd>
+      %seccomment%
+    </dd>
 ENDIF:seccomment
 ENDIF:sectitle
 
 IF:classlist
-  <div>
-    Classes and Modules
-  </div>
-  <div>
-    %classlist%
-  </div>
+    <dt>
+      Classes and Modules
+    </dt>
+    <dd>
+      %classlist%
+    </dd>
 ENDIF:classlist
 
 IF:constants
-  <div>
-    Constants
-  </div>
-  <div>
+    <dt>
+      Constants
+    </dt>
+    <dd>
+      <dl>
 START:constants
-    <div>
-      %name%
-      =
-      %value%
-    </div>
+        <dt>
+          %name%
+        </dt>
+        <dd>
+          %value%
 IF:desc
-    <div>
-      %desc%
-    </div>
+          <p>
+            %desc%
+          </p>
 ENDIF:desc
+        </dd>
 END:constants
-  </div>
+      </dl>
+    </dd>
 ENDIF:constants
 
 IF:attributes
-  <div>
-    Attributes
-  </div>
-  <div>
+    <dt>
+      Attributes
+    </dt>
+    <dd>
 START:attributes
-    <div>
+      <dl>
 IF:rw
       [%rw%]
 ENDIF:rw
-    </div>
-    <div>
-      %name%
-    </div>
-    <div>
-      %a_desc%
-    </div>
+        <dt>
+          %name%
+        </dt>
+        <dd>
+          %a_desc%
+        </dd>
 END:attributes
-  </div>
+      </dl>
+    </dd>
 ENDIF:attributes
 
 IF:method_list
@@ -302,8 +317,9 @@ END:methods
 ENDIF:methods
 END:method_list
 ENDIF:method_list
+
 END:sections
-</div>
+  </dl>
 HTML
 
 FOOTER = <<ENDFOOTER
