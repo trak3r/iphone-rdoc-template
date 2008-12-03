@@ -11,6 +11,10 @@ module Page
 FONTS = ""
 
 STYLE = <<CSS
+body {
+  font-family: Helvetica;
+  font-size: 32pt;
+}
 CSS
 
 XHTML_PREAMBLE = %{<?xml version="1.0" encoding="%charset%"?>
@@ -335,15 +339,28 @@ FILE_INDEX = XHTML_PREAMBLE + <<HTML
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
     <title>Index</title>
-    <base target="docwin" />
+    <style type="text/css">
+body {
+  font-family: Helvetica;
+  font-size: 32pt;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  float: none;
+}
+    </style>
   </head>
   <body>
-    <div>%list_title%</div>
     <div>
-START:entries
-      <a href="%href%">%name%</a>
-END:entries
+      %list_title%
     </div>
+START:entries
+    <div>
+      <a href="%href%">%name%</a>
+    </div>
+END:entries
   </body>
 </html>
 HTML
