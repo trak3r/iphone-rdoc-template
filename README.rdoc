@@ -1,10 +1,10 @@
 = What is it?
 
-It's an RDoc template that's tailored to look better in the iPhone web browser.
+It's an RDoc template tailored to look better in the iPhone web browser.
 
 == How to generate for Rails
 
   cd <your rails directory>
-  rake rerdoc template=<your path to iphone_rdoc_template>/iphone_rdoc_template
+  rake rerdoc template=<path to iphone_rdoc_template>/iphone_rdoc_template
 
 (Note: It's important to leave off the ".rb" extension as the Rails Rake task will append it to the path.)

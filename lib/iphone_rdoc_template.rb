@@ -9,8 +9,14 @@ FONTS = ""
 
 STYLE = <<CSS
 body {
-  font-family: Helvetica;
-  font-size: 32pt;
+	font-family: Helvetica;
+	xfont-size: 28pt;
+}
+ul {
+	list-style: none;
+}
+dt {
+	font-weight: bold;
 }
 CSS
 
@@ -266,21 +272,20 @@ END:attributes
 ENDIF:attributes
 
 IF:method_list
-    <dt>
-      Methods
-    </dt>
-    <dd>
-      <dl class="method_list">
 START:method_list
 IF:methods
-        <dt>
-          %type% 
-          %category% 
-          methods
-        </dt>
-        <dd>
+    <dt>
+      %type% 
+      %category% 
+      methods
+    </dt>
+    <dd>
 START:methods
-  
+
+      <dt>
+        Method
+      </dt>
+      <dd>
 IF:callseq
         <a name="%aref%">%callseq%</a>
 ENDIF:callseq
@@ -288,32 +293,31 @@ IFNOT:callseq
         <a name="%aref%">%name%</a>
         %params%
 ENDIF:callseq
+      </dd>
 
 IF:m_desc
-        <dt>
-          Desciption
-        </dt>
-        <dd>
-          %m_desc%
-        </dd>
+      <dt>
+        Desciption
+      </dt>
+      <dd>
+        %m_desc%
+      </dd>
 ENDIF:m_desc
 
 IF:aka
-        <dt>
-          Alias
-        </dt>
-        <dd>
+      <dt>
+        Alias
+      </dt>
+      <dd>
 START:aka
-          <a href="%aref%">%name%</a>
+        <a href="%aref%">%name%</a>
 END:aka
-        </dd>
+      </dd>
 ENDIF:aka
 
 END:methods
-        </dd>
+  </dd>
 ENDIF:methods
-      </dl class="method_list">
-    </dd>
 END:method_list
 ENDIF:method_list
 
