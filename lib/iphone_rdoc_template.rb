@@ -274,18 +274,14 @@ ENDIF:attributes
 IF:method_list
 START:method_list
 IF:methods
-    <dt>
+    <h2>
       %type% 
       %category% 
       methods
-    </dt>
-    <dd>
+    </h2>
 START:methods
 
-      <dt>
-        Method
-      </dt>
-      <dd>
+      <h3>
 IF:callseq
         <a name="%aref%">%callseq%</a>
 ENDIF:callseq
@@ -293,15 +289,12 @@ IFNOT:callseq
         <a name="%aref%">%name%</a>
         %params%
 ENDIF:callseq
-      </dd>
+      </h3>
 
 IF:m_desc
-      <dt>
-        Desciption
-      </dt>
-      <dd>
+      <p>
         %m_desc%
-      </dd>
+      </p>
 ENDIF:m_desc
 
 IF:aka
@@ -316,7 +309,6 @@ END:aka
 ENDIF:aka
 
 END:methods
-  </dd>
 ENDIF:methods
 END:method_list
 ENDIF:method_list
