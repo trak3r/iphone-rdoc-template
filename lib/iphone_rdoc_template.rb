@@ -337,7 +337,9 @@ FILE_INDEX = XHTML_PREAMBLE + <<HTML
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
-    <title>Index</title>
+    <title>
+      %list_title%
+    </title>
     <style type="text/css">
 body {
   font-family: Helvetica;
@@ -352,9 +354,9 @@ li {
     </style>
   </head>
   <body>
-    <div>
+    <h1>
       %list_title%
-    </div>
+    </h1>
     <ul>
 START:entries
       <li>
@@ -372,8 +374,10 @@ METHOD_INDEX = FILE_INDEX
 INDEX = XHTML_PREAMBLE + <<HTML
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>%title%</title>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+    <title>
+      %title%
+    </title>
     <style type="text/css">
 body {
   font-family: Helvetica;
@@ -388,6 +392,9 @@ li {
     </style>
   </head>
   <body>
+    <h1>
+      %title%
+    </h1>
     <ul>
       <li>
         <a href="fr_file_index.html">Files</a>
