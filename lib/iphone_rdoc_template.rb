@@ -23,11 +23,11 @@ XHTML_PREAMBLE = %{<?xml version="1.0" encoding="%charset%"?>
 HEADER = XHTML_PREAMBLE + <<ENDHEADER
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+    <link rel="stylesheet" href="%style_url%" type="text/css" media="screen" />
     <title>
       %title%
     </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
-    <link rel="stylesheet" href="%style_url%" type="text/css" media="screen" />
     <script language="JavaScript" type="text/javascript">
     // <![CDATA[
 
@@ -369,15 +369,17 @@ FR_INDEX_BODY = <<HTML
 !INCLUDE!
 HTML
 
-FILE_INDEX = XHTML_PREAMBLE + <<HTML
+COMMON_HEADER = <<HTML
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+    <link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />
+HTML
+
+FILE_INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
     <title>
       %list_title%
     </title>
-    <style type="text/css">
-    </style>
   </head>
   <body>
     <h1>
@@ -397,15 +399,10 @@ HTML
 CLASS_INDEX = FILE_INDEX
 METHOD_INDEX = FILE_INDEX
 
-INDEX = XHTML_PREAMBLE + <<HTML
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
     <title>
       %title%
     </title>
-    <style type="text/css">
-    </style>
   </head>
   <body>
     <h1>
