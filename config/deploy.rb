@@ -1,14 +1,14 @@
 role :site, 'pocketrails.com'
-
-set :user, 'teflonted'
+role :local, 'localhost'
 
 namespace :pr do
   desc "Generate the RDoc."
-  task :rdoc do
+  task :rdoc, :roles => :local do
+    run "cd ~/Desktop/rails && rake rerdoc template=~/Desktop/iphone_rdoc_template/lib/iphone_rdoc_template > /dev/null"
   end
   
   desc "Compress the files locally."
-  task :gzip do
+  task :gzip, :roles => :local do
   end
   
   desc "Copy the zip file to the server."
@@ -17,7 +17,7 @@ namespace :pr do
   end
 
   desc "Decompress the file remotely."
-  task :gunzip do
+  task :gunzip, :roles => :site do
     run "cd ~/pocketrails.com && gunzip ~/rdoc"
   end
 end
@@ -29,3 +29,15 @@ before 'pr:gzip', 'pr:rdoc'
 before 'pr:scp', 'pr:gzip'
 before 'pr:gunzip', 'pr:scp'  
 before 'deploy', 'pr:gunzip'
+
+[ 'pr:rdoc', 'pr:gzip' ].each do |task| 
+  before "#{task}" do 
+    set :user, 'ted'
+  end 
+end
+
+[ 'pr:scp', 'pr:gunzip' ].each do |task| 
+  before "#{task}" do 
+    set :user, 'teflonted'
+  end 
+end
