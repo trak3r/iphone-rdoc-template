@@ -10,7 +10,7 @@ namespace :pocketrails do
 
   desc "Upload the RDoc to DreamHost"
   task :scp do
-    system "cd ~/Desktop/rails && scp -r * teflonted@terranova.dreamhost.com:pocketrails.com/"
+    system "cd ~/Desktop/rails && scp -r * teflonted@pocketrails.com:pocketrails.com/"
   end
 end
 
