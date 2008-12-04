@@ -34,10 +34,10 @@ end
 task :deploy do
 end
 
-#before 'pr:gzip', 'pr:rdoc'
-#before 'pr:scp', 'pr:gzip'
-#before 'pr:gunzip', 'pr:scp'  
-#before 'deploy', 'pr:gunzip'
+before 'pr:gzip', 'pr:rdoc'
+before 'pr:scp', 'pr:gzip'
+before 'pr:gunzip', 'pr:scp'  
+before 'deploy', 'pr:gunzip'
 
 [ 'pr:rdoc', 'pr:gzip' ].each do |task| 
   before "#{task}" do 
