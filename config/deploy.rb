@@ -15,7 +15,7 @@ end
 
 desc "Compress the files locally."
 task :gzip, :roles => :local do
-  run "cd #{rdoc_path} && tar --create --gzip --file #{zipped_file} *"
+  run "cd #{rdoc_path} && tar cvzf #{zipped_file} *"
 end
 
 desc "Copy the zip file to the server."

@@ -10,13 +10,17 @@ FONTS = ""
 STYLE = <<CSS
 body {
 	font-family: Helvetica;
-	font-size: 28pt;
+	width: 480px;
 }
 ul {
 	list-style: none;
 }
 dt {
 	font-weight: bold;
+}
+pre {
+	overflow-x: auto;
+	white-space: pre-wrap;
 }
 CSS
 
@@ -29,6 +33,7 @@ XHTML_PREAMBLE = %{<?xml version="1.0" encoding="%charset%"?>
 HEADER = XHTML_PREAMBLE + <<ENDHEADER
 <html>
   <head>
+    <meta content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
     <link rel="stylesheet" href="%style_url%" type="text/css" media="screen" />
     <title>
