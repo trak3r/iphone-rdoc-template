@@ -9,7 +9,7 @@ namespace :pr do
   
   desc "Compress the files locally."
   task :gzip, :roles => :local do
-    run "cd ~/Desktop/rails && gzip --stdout --recursive * > rdoc.gz"
+    run "cd ~/Desktop/rails/doc/rdoc && gzip --stdout --recursive * > rdoc.gz"
   end
   
   desc "Copy the zip file to the server."
