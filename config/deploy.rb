@@ -1,3 +1,7 @@
+role :site, 'pocketrails.com'
+
+set :user, 'teflonted'
+
 namespace :pr do
   desc "Generate the RDoc."
   task :rdoc do
@@ -8,11 +12,13 @@ namespace :pr do
   end
   
   desc "Copy the zip file to the server."
-  task :scp do
+  task :scp, :roles => :site do
+    upload "rdoc", "~", :via => :scp
   end
 
   desc "Decompress the file remotely."
   task :gunzip do
+    run "cd ~/pocketrails.com && gunzip ~/rdoc"
   end
 end
 
