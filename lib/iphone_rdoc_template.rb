@@ -34,6 +34,19 @@ HEADER = XHTML_PREAMBLE + <<ENDHEADER
     <title>
       %title%
     </title>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3648329338598531";
+/* Pocket Rails */
+google_ad_slot = "9128679516";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
     <script language="JavaScript" type="text/javascript">
     // <![CDATA[
 
