@@ -406,6 +406,7 @@ HTML
 COMMON_HEADER = <<HTML
 <html>
   <head>
+    <meta content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
     <link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />
 HTML
