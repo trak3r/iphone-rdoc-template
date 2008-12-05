@@ -4,14 +4,8 @@ role :local, 'localhost'
 desktop_path = "/Users/ted/Desktop"
 rails_path = "#{desktop_path}/rails"
 rdoc_path = "#{rails_path}/doc/rdoc"
-project_path = "#{desktop_path}/iphone_rdoc_template"
 remote_path = "~/pocketrails.com"
 zipped_file = "pocketrails.tgz"
-
-desc "Generate the RDoc."
-task :rdoc, :roles => :local do
-  run "cd #{rails_path} && rake rerdoc template=#{project_path}/lib/iphone_rdoc_template"
-end
 
 desc "Compress the files locally."
 task :gzip, :roles => :local do
@@ -29,13 +23,12 @@ task :gunzip, :roles => :site do
 end
 
 task :deploy do
-  rdoc
   gzip
   scp
   gunzip
 end
 
-[ 'rdoc', 'gzip' ].each do |task| 
+[ 'gzip' ].each do |task| 
   before "#{task}" do 
     set :user, 'ted'
   end 
