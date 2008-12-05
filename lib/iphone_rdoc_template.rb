@@ -7,6 +7,18 @@ module Page
 
 FONTS = ""
 
+GOOGLE_ANALYTICS = <<SNIPPET
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1377203-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+SNIPPET
+
 STYLE = <<CSS
 body {
 	font-family: Helvetica;
@@ -31,7 +43,23 @@ XHTML_PREAMBLE = %{<?xml version="1.0" encoding="%charset%"?>
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 }
 
-HEADER = XHTML_PREAMBLE + <<ENDHEADER
+GOOGLE_ADSENSE = <<HTML
+<script type="text/javascript"><!--
+google_ad_client = "pub-3648329338598531";
+/* Pocket Rails */
+google_ad_slot = "9128679516";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<hr />
+HTML
+
+HEADER = <<HTML
+#{XHTML_PREAMBLE}
 <html>
   <head>
     <meta content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
@@ -81,22 +109,8 @@ HEADER = XHTML_PREAMBLE + <<ENDHEADER
     </script>
   </head>
   <body>
-
-<script type="text/javascript"><!--
-google_ad_client = "pub-3648329338598531";
-/* Pocket Rails */
-google_ad_slot = "9128679516";
-google_ad_width = 234;
-google_ad_height = 60;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
-<hr />
-
-ENDHEADER
+#{GOOGLE_ADSENSE}
+HTML
 
 FILE_PAGE = <<HTML
   <h1>
@@ -338,20 +352,23 @@ END:sections
   </dl>
 HTML
 
-FOOTER = <<ENDFOOTER
+FOOTER = <<HTML
+#{GOOGLE_ANALYTICS}
   </body>
 </html>
-ENDFOOTER
+HTML
 
-BODY = HEADER + <<ENDBODY
+BODY = <<HTML
+  #{HEADER}
   !INCLUDE! <!-- banner header -->
   <div id="bodyContent">
     #{METHOD_LIST}
   </div>
   #{FOOTER}
-ENDBODY
+HTML
 
-SRC_PAGE = XHTML_PREAMBLE + <<HTML
+SRC_PAGE = <<HTML
+#{XHTML_PREAMBLE}
 <html>
   <head>
     <title>
@@ -393,7 +410,7 @@ COMMON_HEADER = <<HTML
     <link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />
 HTML
 
-FILE_INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
+FILE_INDEX_GUTS = <<HTML
     <title>
       %list_title%
     </title>
@@ -409,14 +426,29 @@ START:entries
       </li>
 END:entries
     </ul>
-  </body>
-</html>
+HTML
+
+GOOGLE_SEARCH_FORM = <<HTML
+<form method="get" action="http://www.google.com/search">
+<input type="text" name="q" size="31" maxlength="255" value="" />
+<input type="submit" value="Google Search" />
+<input type="hidden" name="sitesearch" value="pocketrails.com" />
+</form>
+HTML
+
+FILE_INDEX = <<HTML
+#{XHTML_PREAMBLE}
+#{COMMON_HEADER}
+#{FILE_INDEX_GUTS}
+#{FOOTER}
 HTML
 
 CLASS_INDEX = FILE_INDEX
 METHOD_INDEX = FILE_INDEX
 
-INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
+INDEX = <<HTML
+#{XHTML_PREAMBLE}
+#{COMMON_HEADER}
     <title>
       %title%
     </title>
@@ -436,15 +468,8 @@ INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
         <a href="fr_method_index.html">Methods</a>
       </li>
     </ul>
-    
-<form method="get" action="http://www.google.com/search">
-<input type="text" name="q" size="31" maxlength="255" value="" />
-<input type="submit" value="Google Search" />
-<input type="hidden" name="sitesearch" value="pocketrails.com" />
-</form>
-        
-  </body>
-</html>
+#{GOOGLE_SEARCH_FORM}    
+#{FOOTER}
 HTML
 
 end
