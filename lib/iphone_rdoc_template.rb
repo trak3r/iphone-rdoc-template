@@ -436,6 +436,13 @@ INDEX = XHTML_PREAMBLE + COMMON_HEADER + <<HTML
         <a href="fr_method_index.html">Methods</a>
       </li>
     </ul>
+    
+<form method="get" action="http://www.google.com/search">
+<input type="text" name="q" size="31" maxlength="255" value="" />
+<input type="submit" value="Google Search" />
+<input type="hidden" name="sitesearch" value="pocketrails.com" />
+</form>
+        
   </body>
 </html>
 HTML
