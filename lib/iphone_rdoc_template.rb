@@ -26,6 +26,7 @@ module RDoc
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 }
+    W3C_VALIDATION = read('w3c')
     GOOGLE_ANALYTICS = read('analytics')
     STYLE = read('styles')
     GOOGLE_ADSENSE = read('adsense')
@@ -40,7 +41,7 @@ module RDoc
 !INCLUDE!
 HTML
     COMMON_HEADER = <<HTML
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
     <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
