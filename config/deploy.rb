@@ -31,7 +31,6 @@ task :deploy do
   gzip
   scp
   gunzip
-  sitemap
 end
 
 [ 'gzip' ].each do |task| 
