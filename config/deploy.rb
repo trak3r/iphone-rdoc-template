@@ -22,10 +22,16 @@ task :gunzip, :roles => :site do
   run "cd #{remote_path} && tar xvzf #{zipped_file}"
 end
 
+desc "Regenerate the sitemap XML."
+task :sitemap, :roles => :site do
+  run "cd sitemap_gen && ./sitemap_gen.py --config=config.xml"
+end
+
 task :deploy do
   gzip
   scp
   gunzip
+  sitemap
 end
 
 [ 'gzip' ].each do |task| 
@@ -34,7 +40,7 @@ end
   end 
 end
 
-[ 'scp', 'gunzip' ].each do |task| 
+[ 'scp', 'gunzip', 'sitemap' ].each do |task| 
   before "#{task}" do 
     set :user, 'teflonted'
   end 
