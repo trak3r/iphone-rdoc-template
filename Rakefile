@@ -1,7 +1,7 @@
 require 'rake/rdoctask'
 
 RAILS_PATH = '~/Desktop/rails'
-TEMPLATE_PATH = '~/Desktop/iphone_rdoc_template/lib/iphone_rdoc_template'
+TEMPLATE_PATH = '~/Desktop/pocketrails/lib/iphone_rdoc_template'
 
 desc "Generate the RDoc for Rails"
 task :rerdoc do

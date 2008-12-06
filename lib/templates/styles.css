@@ -1,0 +1,15 @@
+body {
+	font-family: Helvetica;
+	width: 480px;
+	font-size: x-small;
+}
+ul {
+	list-style: none;
+}
+dt {
+	font-weight: bold;
+}
+pre {
+	overflow-x: auto;
+	white-space: pre-wrap;
+}

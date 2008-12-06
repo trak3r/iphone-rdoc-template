@@ -1,0 +1,32 @@
+%classmod%
+  <h1>
+    %full_name%
+  </h1>
+  <dl>
+    <dt>
+      Files
+    </dt>
+    <dd>
+      <ul>
+START:infiles
+        <li>
+          HREF:full_path_url:full_path:
+        </li>
+END:infiles
+      </ul>
+    </dd>
+IF:parent
+    <dt>
+      Parent
+    </dt>
+    <dd>
+IF:par_url
+      <a href="%par_url%">
+ENDIF:par_url
+        %parent%
+IF:par_url
+      </a>
+ENDIF:par_url
+ENDIF:parent
+    </dd>
+  </dl>

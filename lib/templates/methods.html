@@ -1,0 +1,182 @@
+  <dl>
+IF:diagram
+    <dt>
+      Diagram
+    </dt>
+    <dd>
+      %diagram%
+    </dd>
+ENDIF:diagram
+
+IF:description
+    <dt>
+      Description
+    </dt>
+    <dd>
+      %description%
+    </dd>
+ENDIF:description
+
+IF:requires
+    <dt>
+      Required Files
+    </dt>
+    <dd>
+      <ul>
+START:requires
+        <li>HREF:aref:name:</li>
+END:requires
+      </ul>
+    </dd>
+ENDIF:requires
+
+IF:toc
+    <dt>
+      Contents
+    </dt>
+    <dd>
+      <ul>
+START:toc
+        <li>
+          <a href="#%href%">%secname%</a>
+        </li>
+END:toc
+      </ul>
+    </dd>
+ENDIF:toc
+
+IF:methods
+    <dt>
+      Methods
+    </dt>
+    <dd>
+      <ul>
+START:methods
+        <li>HREF:aref:name:</li>
+END:methods
+      </ul>
+    </dd>
+ENDIF:methods
+
+IF:includes
+    <dt>
+      Included Modules
+    </dt>
+    <dd>
+      <ul>
+START:includes
+        <li>HREF:aref:name:</li>
+END:includes
+      </ul>
+    </dd>
+ENDIF:includes
+
+START:sections
+IF:sectitle
+    <dt>
+      <a name="%secsequence%">%sectitle%</a>
+    </dt>
+IF:seccomment
+    <dd>
+      %seccomment%
+    </dd>
+ENDIF:seccomment
+ENDIF:sectitle
+
+IF:classlist
+    <dt>
+      Classes and Modules
+    </dt>
+    <dd>
+      %classlist%
+    </dd>
+ENDIF:classlist
+
+IF:constants
+    <dt>
+      Constants
+    </dt>
+    <dd>
+      <dl>
+START:constants
+        <dt>
+          %name%
+        </dt>
+        <dd>
+          %value%
+IF:desc
+          <p>
+            %desc%
+          </p>
+ENDIF:desc
+        </dd>
+END:constants
+      </dl>
+    </dd>
+ENDIF:constants
+
+IF:attributes
+    <dt>
+      Attributes
+    </dt>
+    <dd>
+START:attributes
+      <dl>
+IF:rw
+      [%rw%]
+ENDIF:rw
+        <dt>
+          %name%
+        </dt>
+        <dd>
+          %a_desc%
+        </dd>
+END:attributes
+      </dl>
+    </dd>
+ENDIF:attributes
+
+IF:method_list
+START:method_list
+IF:methods
+    <h2>
+      %type% 
+      %category% 
+      methods
+    </h2>
+START:methods
+
+      <h3>
+IF:callseq
+        <a name="%aref%">%callseq%</a>
+ENDIF:callseq
+IFNOT:callseq
+        <a name="%aref%">%name%</a>
+        %params%
+ENDIF:callseq
+      </h3>
+
+IF:m_desc
+      <p>
+        %m_desc%
+      </p>
+ENDIF:m_desc
+
+IF:aka
+      <dt>
+        Alias
+      </dt>
+      <dd>
+START:aka
+        <a href="%aref%">%name%</a>
+END:aka
+      </dd>
+ENDIF:aka
+
+END:methods
+ENDIF:methods
+END:method_list
+ENDIF:method_list
+
+END:sections
+  </dl>
