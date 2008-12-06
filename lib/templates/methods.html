@@ -1,23 +1,28 @@
-  <dl>
+
 IF:diagram
+  <dl>
     <dt>
       Diagram
     </dt>
     <dd>
       %diagram%
     </dd>
+  </dl>
 ENDIF:diagram
 
 IF:description
+  <dl>
     <dt>
       Description
     </dt>
     <dd>
       %description%
     </dd>
+  </dl>
 ENDIF:description
 
 IF:requires
+  <dl>
     <dt>
       Required Files
     </dt>
@@ -28,9 +33,11 @@ START:requires
 END:requires
       </ul>
     </dd>
+  </dl>
 ENDIF:requires
 
 IF:toc
+  <dl>
     <dt>
       Contents
     </dt>
@@ -43,9 +50,11 @@ START:toc
 END:toc
       </ul>
     </dd>
+  </dl>
 ENDIF:toc
 
 IF:methods
+  <dl>
     <dt>
       Methods
     </dt>
@@ -56,9 +65,11 @@ START:methods
 END:methods
       </ul>
     </dd>
+  </dl>
 ENDIF:methods
 
 IF:includes
+  <dl>
     <dt>
       Included Modules
     </dt>
@@ -69,10 +80,12 @@ START:includes
 END:includes
       </ul>
     </dd>
+  </dl>
 ENDIF:includes
 
 START:sections
 IF:sectitle
+  <dl>
     <dt>
       <a name="%secsequence%">%sectitle%</a>
     </dt>
@@ -81,18 +94,22 @@ IF:seccomment
       %seccomment%
     </dd>
 ENDIF:seccomment
+  </dl>
 ENDIF:sectitle
 
 IF:classlist
+  <dl>
     <dt>
       Classes and Modules
     </dt>
     <dd>
       %classlist%
     </dd>
+  </dl>
 ENDIF:classlist
 
 IF:constants
+  <dl>
     <dt>
       Constants
     </dt>
@@ -113,9 +130,11 @@ ENDIF:desc
 END:constants
       </dl>
     </dd>
+  </dl>
 ENDIF:constants
 
 IF:attributes
+  <dl>
     <dt>
       Attributes
     </dt>
@@ -134,16 +153,17 @@ ENDIF:rw
 END:attributes
       </dl>
     </dd>
+  </dl>
 ENDIF:attributes
 
 IF:method_list
 START:method_list
 IF:methods
-    <h2>
-      %type% 
-      %category% 
-      methods
-    </h2>
+	<h2>
+		%type% 
+		%category% 
+		methods
+	</h2>
 START:methods
 
       <h3>
@@ -157,20 +177,20 @@ ENDIF:callseq
       </h3>
 
 IF:m_desc
-      <p>
-        %m_desc%
-      </p>
+		%m_desc%
 ENDIF:m_desc
 
 IF:aka
-      <dt>
-        Alias
-      </dt>
-      <dd>
+  <dl>
+	<dt>
+	  Alias
+	</dt>
+	<dd>
 START:aka
-        <a href="%aref%">%name%</a>
+		<a href="%aref%">%name%</a>
 END:aka
-      </dd>
+	</dd>
+  </dl>
 ENDIF:aka
 
 END:methods
@@ -179,4 +199,3 @@ END:method_list
 ENDIF:method_list
 
 END:sections
-  </dl>
