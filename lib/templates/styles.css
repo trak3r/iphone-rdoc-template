@@ -1,15 +1,20 @@
 body {
-	font-family: Helvetica;
-	width: 480px;
-	font-size: x-small;
-}
-ul {
-	list-style: none;
+font-family: Helvetica;
+font-size: medium;
 }
 dt {
-	font-weight: bold;
+font-weight: bold;
 }
 pre {
-	overflow-x: auto;
-	white-space: pre-wrap;
+overflow-x: auto;
+white-space: pre-wrap;
+}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+-webkit-text-size-adjust: none;
+}
+ul, li, ol, dl, dd, dt {
+list-style: none;
+}
+a {
+text-decoration: none;
 }

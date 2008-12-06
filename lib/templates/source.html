@@ -4,7 +4,7 @@
     <title>
       %title%
     </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=%charset%" />
+	<%= META_TAGS %>
     <style type="text/css">
 .ruby-comment    { color: green; font-style: italic }
 .ruby-constant   { color: #4433aa; font-weight: bold; }
@@ -21,7 +21,7 @@
   .re  { color: #662222; }
     </style>
   </head>
-  <body>
+  <body onorientationchange="updateOrientation();">
 <%= W3C_VALIDATION %>
     <pre>
 %code%
