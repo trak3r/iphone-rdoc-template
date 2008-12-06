@@ -10,4 +10,12 @@ Download it then write yourself a Rake task like the one in this project (changi
 
 == Caveats
 
-For the sake of simplicity, I removed the source code links and embeddings.
+For the sake of simplicity, I removed the source code links and embedding.
+
+== Thanks
+
+I referred to the following projects when I got lost and confused:
+
+http://github.com/rails/rails/tree/master/doc/template/horo.rb
+
+http://github.com/mislav/hanna/tree/master
