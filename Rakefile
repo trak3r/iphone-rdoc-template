@@ -15,8 +15,18 @@ end
 PROJECT_PATH = '/Users/ted/Desktop/iPhone/personal\ projects/pocketrails'
 RAILS_PATH = "#{PROJECT_PATH}/rails"
 TEMPLATE_PATH = "#{PROJECT_PATH}/lib/iphone_rdoc_template"
+IUI_PATH = "#{PROJECT_PATH}/iui-0.13"
+RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
+
+desc "Copy the image files referenced by the templates"
+task :copy_images do
+  [ 'listArrow.png' ].each do |image|
+    system "cp #{IUI_PATH}/iui/#{image} #{RDOC_PATH}/#{image}"
+  end
+end
 
 desc "Generate the RDoc for Rails"
 task :rerdoc do
   system "cd #{RAILS_PATH} && rake rerdoc template=#{TEMPLATE_PATH}"
+  copy_images
 end
