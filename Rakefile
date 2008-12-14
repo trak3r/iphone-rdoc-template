@@ -12,8 +12,9 @@ Echoe.new('iphone_rdoc_template') do |gem|
   gem.url = 'https://github.com/trak3r/iphone-rdoc-template'
 end
 
-RAILS_PATH = '~/Desktop/rails'
-TEMPLATE_PATH = '~/Desktop/pocketrails/lib/iphone_rdoc_template'
+PROJECT_PATH = '/Users/ted/Desktop/iPhone/personal\ projects/pocketrails'
+RAILS_PATH = "#{PROJECT_PATH}/rails"
+TEMPLATE_PATH = "#{PROJECT_PATH}/lib/iphone_rdoc_template"
 
 desc "Generate the RDoc for Rails"
 task :rerdoc do
