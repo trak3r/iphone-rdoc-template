@@ -6,11 +6,12 @@
   </head>
   <body onorientationchange="updateOrientation();">
 <%= W3C_VALIDATION %>
-    <h1>
-      %title%
-    </h1>
-	(formatted for the iPhone)
-    <ul>
+    <div class="toolbar">
+        <h1 id="pageTitle">
+            %title%
+        </h1>
+    </div>
+    <ul id="home" title="%title%" selected="true">
       <li>
         <a href="fr_file_index.html">Files</a>
       </li>
@@ -22,8 +23,7 @@
       </li>
     </ul>
 	<%= GOOGLE_SEARCH_FORM %>
-	<p>
-		Template source at
-		<a href="http://github.com/trak3r/iphone-rdoc-template">github.com/trak3r/iphone-rdoc-template</a>
-	</p>
+	<h2>
+        <a href="http://github.com/trak3r/iphone-rdoc-template">github.com/trak3r/iphone-rdoc-template</a>
+    </h2>
 <%= FOOTER %>
