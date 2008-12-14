@@ -1,32 +1,41 @@
-%classmod%
-  <h1>
-    %full_name%
-  </h1>
-  <dl>
-    <dt>
-      Files
-    </dt>
-    <dd>
-      <ul>
+<div class="toolbar">
+    <h1 id="pageTitle">
+        %classmod%
+    </h1>
+</div>
+<div id="%full_name%" title="%full_name%" class="panel">
+<%= GOOGLE_ADSENSE %>
+    <h2>%full_name%</h2>
+    <fieldset>
+        <div class="row">
+            <label>
+                Files
+            </label>
+            <div>
+                <ul>
 START:infiles
-        <li>
-          HREF:full_path_url:full_path:
-        </li>
+                    <li>
+                        HREF:full_path_url:full_path:
+                    </li>
 END:infiles
-      </ul>
-    </dd>
+                </ul>
+            </div>
+        </div>
 IF:parent
-    <dt>
-      Parent
-    </dt>
-    <dd>
+        <div class="row">
+            <label>
+                Parent
+            </label>
+            <div>
 IF:par_url
-      <a href="%par_url%">
+                <a href="%par_url%">
 ENDIF:par_url
-        %parent%
+                    %parent%
 IF:par_url
-      </a>
+                </a>
 ENDIF:par_url
-	</dd>
+            </div>
+        </div>
 ENDIF:parent
-  </dl>
+    </fieldset>
+</div>
