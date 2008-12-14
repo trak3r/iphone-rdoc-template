@@ -1,7 +1,7 @@
 require 'echoe'
 require 'rake/rdoctask'
 
-task :default => :rerdoc
+task :test => :rerdoc
 
 Echoe.new('iphone_rdoc_template') do |gem|
   gem.version = '0.0.1'
@@ -28,5 +28,5 @@ end
 desc "Generate the RDoc for Rails"
 task :rerdoc do
   system "cd #{RAILS_PATH} && rake rerdoc template=#{TEMPLATE_PATH}"
-  copy_images
+  Rake::Task[ "copy_images" ].execute
 end
