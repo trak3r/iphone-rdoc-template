@@ -1,47 +1,47 @@
 
 IF:diagram
-  <dl>
-    <dt>
+  
+    <h2>
       Diagram
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       %diagram%
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:diagram
 
 IF:description
-  <dl>
-    <dt>
+  
+    <h2>
       Description
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       %description%
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:description
 
 IF:requires
-  <dl>
-    <dt>
+  
+    <h2>
       Required Files
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       <ul>
 START:requires
         <li>HREF:aref:name:</li>
 END:requires
       </ul>
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:requires
 
 IF:toc
-  <dl>
-    <dt>
+  
+    <h2>
       Contents
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       <ul>
 START:toc
         <li>
@@ -49,111 +49,111 @@ START:toc
         </li>
 END:toc
       </ul>
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:toc
 
 IF:methods
-  <dl>
-    <dt>
+  
+    <h2>
       Methods
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       <ul>
 START:methods
         <li>HREF:aref:name:</li>
 END:methods
       </ul>
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:methods
 
 IF:includes
-  <dl>
-    <dt>
+  
+    <h2>
       Included Modules
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       <ul>
 START:includes
         <li>HREF:aref:name:</li>
 END:includes
       </ul>
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:includes
 
 START:sections
 IF:sectitle
-  <dl>
-    <dt>
+  
+    <h2>
       <a name="%secsequence%">%sectitle%</a>
-    </dt>
+    </h2>
 IF:seccomment
-    <dd>
+    <fieldset><div class="row"><label>
       %seccomment%
-    </dd>
+    </label></div></fieldset>
 ENDIF:seccomment
-  </dl>
+  
 ENDIF:sectitle
 
 IF:classlist
-  <dl>
-    <dt>
+  
+    <h2>
       Classes and Modules
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
       %classlist%
-    </dd>
-  </dl>
+    </label></div></fieldset>
+  
 ENDIF:classlist
 
 IF:constants
-  <dl>
-    <dt>
+  
+    <h2>
       Constants
-    </dt>
-    <dd>
-      <dl>
+    </h2>
+    <fieldset><div class="row"><label>
+      
 START:constants
-        <dt>
+        <h2>
           %name%
-        </dt>
-        <dd>
+        </h2>
+        <fieldset><div class="row"><label>
           %value%
 IF:desc
           <p>
             %desc%
           </p>
 ENDIF:desc
-        </dd>
+        </label></div></fieldset>
 END:constants
-      </dl>
-    </dd>
-  </dl>
+      
+    </label></div></fieldset>
+  
 ENDIF:constants
 
 IF:attributes
-  <dl>
-    <dt>
+  
+    <h2>
       Attributes
-    </dt>
-    <dd>
+    </h2>
+    <fieldset><div class="row"><label>
 START:attributes
-      <dl>
+      
 IF:rw
       [%rw%]
 ENDIF:rw
-        <dt>
+        <h2>
           %name%
-        </dt>
-        <dd>
+        </h2>
+        <fieldset><div class="row"><label>
           %a_desc%
-        </dd>
+        </label></div></fieldset>
 END:attributes
-      </dl>
-    </dd>
-  </dl>
+      
+    </label></div></fieldset>
+  
 ENDIF:attributes
 
 IF:method_list
@@ -181,16 +181,16 @@ IF:m_desc
 ENDIF:m_desc
 
 IF:aka
-  <dl>
-	<dt>
+  
+	<h2>
 	  Alias
-	</dt>
-	<dd>
+	</h2>
+	<fieldset><div class="row"><label>
 START:aka
 		<a href="%aref%">%name%</a>
 END:aka
-	</dd>
-  </dl>
+	</label></div></fieldset>
+  
 ENDIF:aka
 
 END:methods

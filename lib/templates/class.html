@@ -1,17 +1,14 @@
 <div class="toolbar">
     <h1 id="pageTitle">
-        %classmod%
+        %full_name%
     </h1>
 </div>
 <div id="%full_name%" title="%full_name%" class="panel">
 <%= GOOGLE_ADSENSE %>
-    <h2>%full_name%</h2>
+    <h2>Files</h2>
     <fieldset>
         <div class="row">
             <label>
-                Files
-            </label>
-            <div>
                 <ul>
 START:infiles
                     <li>
@@ -19,14 +16,12 @@ START:infiles
                     </li>
 END:infiles
                 </ul>
-            </div>
+            </label>
         </div>
 IF:parent
+        <h2>Parent</h2>
         <div class="row">
             <label>
-                Parent
-            </label>
-            <div>
 IF:par_url
                 <a href="%par_url%">
 ENDIF:par_url
@@ -34,7 +29,7 @@ ENDIF:par_url
 IF:par_url
                 </a>
 ENDIF:par_url
-            </div>
+            </label>
         </div>
 ENDIF:parent
     </fieldset>
