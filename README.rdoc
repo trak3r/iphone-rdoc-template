@@ -19,3 +19,7 @@ I referred to the following projects when I got lost and confused:
 http://github.com/rails/rails/tree/master/doc/template/horo.rb
 
 http://github.com/mislav/hanna/tree/master
+
+I borrowed CSS and some graphics from:
+
+http://code.google.com/p/iui/
