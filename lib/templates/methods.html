@@ -1,5 +1,13 @@
-<%= def labeled_row( label, content )
-    "<h2>#{label}</h2><fieldset><div class='row'><label>#{content}</label></div></fieldset>"
+<%= def heading( content )
+        "<h2>#{content}</h2>"
+    end
+
+    def row( content )
+        "<fieldset><div class='row'><label>#{content}</label></div></fieldset>"
+    end
+
+    def labeled_row( label, content )
+    "#{heading(label)}#{row(content)}"
     end %>
 
 IF:diagram
@@ -11,103 +19,67 @@ IF:description
 ENDIF:description
 
 IF:requires
-  
-    <h2>
-      Required Files
-    </h2>
-    <fieldset><div class="row"><label>
-      <ul>
+<%= heading('Required Files') %>
+<fieldset><div class="row"><label>
+<ul>
 START:requires
-        <li>HREF:aref:name:</li>
+<li>HREF:aref:name:</li>
 END:requires
-      </ul>
-    </label></div></fieldset>
-  
+</ul>
+</label></div></fieldset>  
 ENDIF:requires
 
 IF:toc
-  
-    <h2>
-      Contents
-    </h2>
-    <fieldset><div class="row"><label>
-      <ul>
+<%= heading('Contents') %>
+<fieldset><div class="row"><label>
+<ul>
 START:toc
-        <li>
-          <a href="#%href%">%secname%</a>
-        </li>
+<li>
+<a href="#%href%">%secname%</a>
+</li>
 END:toc
-      </ul>
-    </label></div></fieldset>
-  
+</ul>
+</label></div></fieldset>
 ENDIF:toc
 
 IF:methods
-  
-    <h2>
-      Methods
-    </h2>
-    <fieldset><div class="row"><label>
-      <ul>
+<%= heading('Methods') %>
+<fieldset><div class="row"><label>
+<ul>
 START:methods
-        <li>HREF:aref:name:</li>
+<li>HREF:aref:name:</li>
 END:methods
-      </ul>
-    </label></div></fieldset>
-  
+</ul>
+</label></div></fieldset>
 ENDIF:methods
 
 IF:includes
-  
-    <h2>
-      Included Modules
-    </h2>
-    <fieldset><div class="row"><label>
-      <ul>
+<%= heading('Included Modules') %>
+<fieldset><div class="row"><label>
+<ul>
 START:includes
-        <li>HREF:aref:name:</li>
+<li>HREF:aref:name:</li>
 END:includes
-      </ul>
-    </label></div></fieldset>
-  
+</ul>
+</label></div></fieldset>  
 ENDIF:includes
 
 START:sections
 IF:sectitle
-  
-    <h2>
-      <a name="%secsequence%">%sectitle%</a>
-    </h2>
+<%= heading('<a name="%secsequence%">%sectitle%</a>') %>
 IF:seccomment
-    <fieldset><div class="row"><label>
-      %seccomment%
-    </label></div></fieldset>
+<%= row('%seccomment%') %>
 ENDIF:seccomment
-  
 ENDIF:sectitle
 
 IF:classlist
-  
-    <h2>
-      Classes and Modules
-    </h2>
-    <fieldset><div class="row"><label>
-      %classlist%
-    </label></div></fieldset>
-  
+<%= labeled_row('Classes and Modules','%classlist%') %>
 ENDIF:classlist
 
 IF:constants
-  
-    <h2>
-      Constants
-    </h2>
-    <fieldset><div class="row"><label>
-      
+<%= heading('Constants') %>
 START:constants
-        <h2>
-          %name%
-        </h2>
+<%= heading('%name%') %>
         <fieldset><div class="row"><label>
           %value%
 IF:desc
@@ -116,17 +88,11 @@ IF:desc
             %desc%
 ENDIF:desc
         </label></div></fieldset>
-END:constants
-      
-    </label></div></fieldset>
-  
+END:constants      
 ENDIF:constants
 
 IF:attributes
-  
-    <h2>
-      Attributes
-    </h2>
+<%= heading('Attributes') %>
     <fieldset><div class="row">
 START:attributes      
 IF:rw
@@ -139,45 +105,29 @@ ENDIF:rw
           %a_desc%
         </label>
 END:attributes      
-    </div></fieldset>
-  
+    </div></fieldset>  
 ENDIF:attributes
 
 IF:method_list
 START:method_list
 IF:methods
-	<h2>
-		%type% 
-		%category% 
-		methods
-	</h2>
+<%= heading('%type% %category% methods') %>
 START:methods
-
-        <fieldset><div class="row"><label>
 IF:callseq
-        <a name="%aref%">%callseq%</a>
+<%= heading('<a name="%aref%">%callseq%</a>') %>
 ENDIF:callseq
 IFNOT:callseq
-        <a name="%aref%">%name%</a>
-        %params%
+<%= heading('<a name="%aref%">%name%</a> %params%') %>
 ENDIF:callseq
-      </label></div></fieldset>
 
 IF:m_desc
-		%m_desc%
+<%= row('%m_desc%') %>
 ENDIF:m_desc
 
 IF:aka
-  
-	<h2>
-	  Alias
-	</h2>
-	<fieldset><div class="row"><label>
 START:aka
-		<a href="%aref%">%name%</a>
+<%= labeled_row( 'Alias', '%name%' ) %>
 END:aka
-	</label></div></fieldset>
-  
 ENDIF:aka
 
 END:methods
