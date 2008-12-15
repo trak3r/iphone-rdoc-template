@@ -1,24 +1,13 @@
+<%= def labeled_row( label, content )
+    "<h2>#{label}</h2><fieldset><div class='row'><label>#{content}</label></div></fieldset>"
+    end %>
 
 IF:diagram
-  
-    <h2>
-      Diagram
-    </h2>
-    <fieldset><div class="row"><label>
-      %diagram%
-    </label></div></fieldset>
-  
+<%= labeled_row( 'Diagram', '%diagram%' ) %>
 ENDIF:diagram
 
 IF:description
-  
-    <h2>
-      Description
-    </h2>
-    <fieldset><div class="row"><label>
-      %description%
-    </label></div></fieldset>
-  
+<%= labeled_row( 'Description', '%description%' ) %>
 ENDIF:description
 
 IF:requires
@@ -122,9 +111,9 @@ START:constants
         <fieldset><div class="row"><label>
           %value%
 IF:desc
-          <p>
+          </label>
+          <label>
             %desc%
-          </p>
 ENDIF:desc
         </label></div></fieldset>
 END:constants
@@ -138,21 +127,19 @@ IF:attributes
     <h2>
       Attributes
     </h2>
-    <fieldset><div class="row"><label>
-START:attributes
-      
+    <fieldset><div class="row">
+START:attributes      
 IF:rw
       [%rw%]
 ENDIF:rw
-        <h2>
+        <label>
           %name%
-        </h2>
-        <fieldset><div class="row"><label>
+        </label>
+        <label>
           %a_desc%
-        </label></div></fieldset>
-END:attributes
-      
-    </label></div></fieldset>
+        </label>
+END:attributes      
+    </div></fieldset>
   
 ENDIF:attributes
 
@@ -166,7 +153,7 @@ IF:methods
 	</h2>
 START:methods
 
-      <h3>
+        <fieldset><div class="row"><label>
 IF:callseq
         <a name="%aref%">%callseq%</a>
 ENDIF:callseq
@@ -174,7 +161,7 @@ IFNOT:callseq
         <a name="%aref%">%name%</a>
         %params%
 ENDIF:callseq
-      </h3>
+      </label></div></fieldset>
 
 IF:m_desc
 		%m_desc%
