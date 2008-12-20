@@ -1,25 +1,26 @@
 role :site, 'pocketrails.com'
 role :local, 'localhost'
 
-desktop_path = "/Users/ted/Desktop"
-rails_path = "#{desktop_path}/rails"
-rdoc_path = "#{rails_path}/doc/rdoc"
-remote_path = "~/pocketrails.com"
-zipped_file = "pocketrails.tgz"
+DESKTOP_PATH = "/Users/ted/Desktop"
+PROJECT_PATH = "#{DESKTOP_PATH}/iPhone/personal projects/pocketrails"
+RAILS_PATH = "#{PROJECT_PATH}/rails"
+RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
+REMOTE_PATH = "~/pocketrails.com"
+ZIPPED_FILE = "pocketrails.tgz"
 
 desc "Compress the files locally."
 task :gzip, :roles => :local do
-  run "cd #{rdoc_path} && tar cvzf #{zipped_file} *"
+  run "cd '#{RDOC_PATH}' && tar cvzf '#{ZIPPED_FILE}' *"
 end
 
 desc "Copy the zip file to the server."
 task :scp, :roles => :site do
-  upload "#{rdoc_path}/#{zipped_file}", "#{remote_path}", :via => :scp
+  upload "#{RDOC_PATH}/#{ZIPPED_FILE}", "#{REMOTE_PATH}", :via => :scp
 end
 
 desc "Decompress the file remotely."
 task :gunzip, :roles => :site do
-  run "cd #{remote_path} && tar xvzf #{zipped_file}"
+  run "cd #{REMOTE_PATH} && tar xvzf #{ZIPPED_FILE}"
 end
 
 desc "Regenerate the sitemap XML."
