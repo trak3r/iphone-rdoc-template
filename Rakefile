@@ -20,7 +20,7 @@ RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
 
 desc "Copy the image files referenced by the templates"
 task :copy_images do
-  [ 'listArrow.png' ].each do |image|
+  [ 'listArrow.png', 'pinstripes.png' ].each do |image|
     system "cp #{IUI_PATH}/iui/#{image} #{RDOC_PATH}/#{image}"
   end
 end
