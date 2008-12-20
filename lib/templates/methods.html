@@ -20,18 +20,21 @@ ENDIF:description
 
 IF:requires
 <%= heading('Required Files') %>
-<fieldset><div class="row"><label>
+<fieldset>
+<div class="row">
 <ul>
 START:requires
 <li>HREF:aref:name:</li>
 END:requires
 </ul>
-</label></div></fieldset>  
+</div>
+</fieldset>  
 ENDIF:requires
 
 IF:toc
 <%= heading('Contents') %>
-<fieldset><div class="row"><label>
+<fieldset>
+<div class="row">
 <ul>
 START:toc
 <li>
@@ -39,29 +42,34 @@ START:toc
 </li>
 END:toc
 </ul>
-</label></div></fieldset>
+</div>
+</fieldset>  
 ENDIF:toc
 
 IF:methods
 <%= heading('Methods') %>
-<fieldset><div class="row"><label>
+<fieldset>
+<div class="row">
 <ul>
 START:methods
 <li>HREF:aref:name:</li>
 END:methods
 </ul>
-</label></div></fieldset>
+</div>
+</fieldset>  
 ENDIF:methods
 
 IF:includes
 <%= heading('Included Modules') %>
-<fieldset><div class="row"><label>
+<fieldset>
+<div class="row">
 <ul>
 START:includes
 <li>HREF:aref:name:</li>
 END:includes
 </ul>
-</label></div></fieldset>  
+</div>
+</fieldset>  
 ENDIF:includes
 
 START:sections
@@ -80,32 +88,32 @@ IF:constants
 <%= heading('Constants') %>
 START:constants
 <%= heading('%name%') %>
-        <fieldset><div class="row"><label>
-          %value%
+<fieldset>
+<div class="row">
+%value%
 IF:desc
-          </label>
-          <label>
-            %desc%
+%desc%
 ENDIF:desc
-        </label></div></fieldset>
+</div>
+</fieldset>
 END:constants      
 ENDIF:constants
 
 IF:attributes
 <%= heading('Attributes') %>
-    <fieldset><div class="row">
+<fieldset>
+<div class="row">
 START:attributes      
 IF:rw
-      [%rw%]
+[%rw%]
 ENDIF:rw
-        <label>
-          %name%
-        </label>
-        <label>
-          %a_desc%
-        </label>
+<label>
+%name%
+</label>
+%a_desc%
 END:attributes      
-    </div></fieldset>  
+</div>
+</fieldset>  
 ENDIF:attributes
 
 IF:method_list
