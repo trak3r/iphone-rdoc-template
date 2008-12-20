@@ -8,30 +8,26 @@
     <h2>Files</h2>
     <fieldset>
         <div class="row">
-            <label>
-                <ul>
+            <ul>
 START:infiles
-                    <li>
-                        HREF:full_path_url:full_path:
-                    </li>
+                <li>
+                    HREF:full_path_url:full_path:
+                </li>
 END:infiles
-                </ul>
-            </label>
+            </ul>
         </div>
     </fieldset>
 IF:parent
     <h2>Parent</h2>
     <fieldset>
         <div class="row">
-            <label>
 IF:par_url
-                <a href="%par_url%">
+           <a href="%par_url%">
 ENDIF:par_url
-                    %parent%
+               %parent%
 IF:par_url
-                </a>
+           </a>
 ENDIF:par_url
-            </label>
         </div>
 ENDIF:parent
     </fieldset>
