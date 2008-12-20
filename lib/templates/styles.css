@@ -1,9 +1,9 @@
 <%= File.open('../iui-0.13/iui/iui.css').read %>
 
 .panel > fieldset {
-    text-align: none;
+    text-align: left;
 }
 
 .row  {
-    text-align: none;
+    text-align: left;
 }
