@@ -258,9 +258,7 @@ body > .panel {
     background: #FFFFFF;
     -webkit-border-radius: 10px;
     border: 1px solid #999999;
-    /*
     text-align: right;
-    */
     font-size: 16px;
 }
 
@@ -269,9 +267,7 @@ body > .panel {
     min-height: 42px;
     border-bottom: 1px solid #999999;
     -webkit-border-radius: 0;
-    /*
     text-align: right;
-    */
 }
 
 fieldset > .row:last-child {
