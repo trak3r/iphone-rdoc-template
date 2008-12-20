@@ -6,4 +6,15 @@
 
 .row  {
     text-align: left;
+	padding: 10px;
+}
+
+.row ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+}
+
+.row ul li {
+	list-style: none;
 }
