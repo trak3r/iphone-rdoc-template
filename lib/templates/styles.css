@@ -18,3 +18,7 @@
 .row ul li {
 	list-style: none;
 }
+
+.row  p {
+	margin-top: 0px;
+}
