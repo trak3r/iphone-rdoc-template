@@ -1,4 +1,4 @@
-<%= File.open('../iui-0.13/iui/iui.css').read %>
+<%= File.open('../iui-0.13/iui/iui.css').read.sub('display: none;','') %>
 
 .panel > fieldset {
     text-align: left;
