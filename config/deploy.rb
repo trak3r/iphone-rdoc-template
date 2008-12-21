@@ -2,7 +2,7 @@ role :site, 'pocketrails.com'
 role :local, 'localhost'
 
 DESKTOP_PATH = "/Users/ted/Desktop"
-PROJECT_PATH = "#{DESKTOP_PATH}/iPhone/personal projects/pocketrails"
+PROJECT_PATH = "#{DESKTOP_PATH}/iPhone/personal projects/pocketrails/iphone-rdoc-template"
 RAILS_PATH = "#{PROJECT_PATH}/../rails"
 RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
 REMOTE_PATH = "~/pocketrails.com"

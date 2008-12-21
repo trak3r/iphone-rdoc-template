@@ -12,7 +12,7 @@ Echoe.new('iphone_rdoc_template') do |gem|
   gem.url = 'https://github.com/trak3r/iphone-rdoc-template'
 end
 
-PROJECT_PATH = '/Users/ted/Desktop/iPhone/personal\ projects/pocketrails'
+PROJECT_PATH = '/Users/ted/Desktop/iPhone/personal\ projects/pocketrails/iphone-rdoc-template'
 RAILS_PATH = "#{PROJECT_PATH}/../rails"
 TEMPLATE_PATH = "#{PROJECT_PATH}/lib/iphone_rdoc_template"
 IUI_PATH = "#{PROJECT_PATH}/../iui-0.13"
