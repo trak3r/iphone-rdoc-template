@@ -1,5 +1,10 @@
 <%= File.open('../iui-0.13/iui/iui.css').read.sub('display: none;','') %>
 
+.toolbar > h1 {
+	width: 300px;
+	margin-left: -150px;
+}
+
 .panel > fieldset {
     text-align: left;
 }
