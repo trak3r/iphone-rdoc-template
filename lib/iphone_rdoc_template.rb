@@ -48,6 +48,7 @@ HTML
     <link rel="stylesheet" href="rdoc-style.css" type="text/css" media="screen" />
 HTML
     GOOGLE_SEARCH_FORM = read('search')
+    CREDITS = read('credits')
     FILE_INDEX = read('files')
     CLASS_INDEX = FILE_INDEX
     METHOD_INDEX = FILE_INDEX
