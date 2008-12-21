@@ -13,9 +13,9 @@ Echoe.new('iphone_rdoc_template') do |gem|
 end
 
 PROJECT_PATH = '/Users/ted/Desktop/iPhone/personal\ projects/pocketrails'
-RAILS_PATH = "#{PROJECT_PATH}/rails"
+RAILS_PATH = "#{PROJECT_PATH}/../rails"
 TEMPLATE_PATH = "#{PROJECT_PATH}/lib/iphone_rdoc_template"
-IUI_PATH = "#{PROJECT_PATH}/iui-0.13"
+IUI_PATH = "#{PROJECT_PATH}/../iui-0.13"
 RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
 
 desc "Copy the image files referenced by the templates"

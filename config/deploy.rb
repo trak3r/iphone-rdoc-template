@@ -3,7 +3,7 @@ role :local, 'localhost'
 
 DESKTOP_PATH = "/Users/ted/Desktop"
 PROJECT_PATH = "#{DESKTOP_PATH}/iPhone/personal projects/pocketrails"
-RAILS_PATH = "#{PROJECT_PATH}/rails"
+RAILS_PATH = "#{PROJECT_PATH}/../rails"
 RDOC_PATH = "#{RAILS_PATH}/doc/rdoc"
 REMOTE_PATH = "~/pocketrails.com"
 ZIPPED_FILE = "pocketrails.tgz"

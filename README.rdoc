@@ -2,11 +2,15 @@
 
 == What is it?
 
-It's an RDoc template tailored to look better in the iPhone web browser (no frames, a lot less styling, etc.).
+It's an RDoc template tailored to look better in the iPhone web browser (no frames, a lot less styling, native app feel thanks to iUI library, etc.).
+
+== Are there any external dependencies?
+
+Yup, the aforementioned iUI library http://code.google.com/p/iui/
 
 == How do I use it?
 
-Download it then write yourself a Rake task like the one in this project (changing the appropriate paths, of course).
+Download it then write yourself a Rake task like the one provided (changing the appropriate paths, of course).
 
 == Caveats
 
